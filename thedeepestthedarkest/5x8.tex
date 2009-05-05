@@ -1,0 +1,118 @@
+% ========= DOCUMENT CLASS
+%\documentclass[a5paper,11pt,titlepage,twoside,openright,final]{book}
+\documentclass[11pt,twoside,openright]{scrbook}
+
+
+% ========== BOOK PAGE SIZE
+\setlength{\paperwidth}{5in} % set size for latex
+\setlength{\paperheight}{8in}
+\special{papersize=5in,8in} % set size for ghostscript
+\typearea[0mm]{0} % 6mm for spine
+
+\oddsidemargin -0.25in
+\evensidemargin -0.5in
+\textwidth 3.75in
+
+\title{THE DEEPEST \\ THE DARKEST \\ and other stories}
+\author{Curtis C. Alexander}
+\date{}
+
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+% working on fonts
+%\usepackage{sectsty}
+%\allsectionsfont{\usefont{OT1}{phv}{bc}{n}\selectfont}
+
+
+\newcommand{\parasep}{\vspace{0.5in} \noindent}
+\newcommand{\fancychaptermark}[1]
+  {\markboth{Curtis C. Alexander}{}}
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty} %get rid of header/footer for toc page
+\section*{}
+
+\begin{center}
+	\includegraphics[width=20mm]{phtitle.png}
+	\cleardoublepage
+	\vspace{3in}
+	\includegraphics[width=80mm]{firsttitle.png}
+	\cleardoublepage
+	\vspace{3in}
+	\includegraphics[width=80mm]{firsttitle.png}
+	\vspace{7in}
+	\includegraphics[width=80mm]{secondtitle.png}
+\end{center}
+\include{copyright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Dedication Page                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\thispagestyle{empty}
+\newenvironment{dedication2}
+  {\cleardoublepage \thispagestyle{empty} \vspace*{\stretch{1}} \begin{center} \em}
+  {\end{center} \vspace*{\stretch{3}} \clearpage}
+\begin{dedication2}
+To Geeta
+\end{dedication2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Quote Page                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\newenvironment{quotepage}
+  {\cleardoublepage \thispagestyle{empty} \vspace*{\stretch{1}} \begin{center}}
+  {\end{center} \vspace*{\stretch{3}} \clearpage}
+\begin{quotepage}
+\emph{One should always be a little cold and a little hungry} \\
+\indent --- \textbf{My mother, paraphrasing Margaret Thatcher}
+\end{quotepage}
+
+\pagestyle{headings} % put headers/footers back on
+\tableofcontents
+\mainmatter
+\fancychaptermark{}
+
+\section{CHILD OF DRAGON}
+\thispagestyle{empty}
+\cleardoublepage
+\include{childofdragon_edited_final}
+\cleardoublepage
+
+\section{THE MAP}
+\thispagestyle{empty}
+\cleardoublepage
+\include{the_map_edited_final}
+\cleardoublepage
+
+\section{MY OLD SUN}
+\thispagestyle{empty}
+\cleardoublepage
+\include{my_old_sun_edited_final}
+
+\section{THE DEEPEST THE DARKEST}
+\thispagestyle{empty}
+\cleardoublepage
+\include{thedeepest_thedarkest_edited_final}
+\cleardoublepage
+
+\pagestyle{plain}
+\section*{CREATIVE COMMONS LICENCE}
+\thispagestyle{empty}
+\cleardoublepage
+\include{by-nc-sa-2.5-licence}
+
+% Some blank pages
+\thispagestyle{empty}
+\newpage
+\mbox{}
+\thispagestyle{empty}
+\newpage
+\mbox{}
+\thispagestyle{empty}
+\newpage
+
+\end{document}
